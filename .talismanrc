@@ -1,0 +1,18 @@
+fileignoreconfig:
+- filename: mongo-app/dev.yaml
+  checksum: 0eb506f55ef8e0615782381b95dc941600a965918f67afbaaa18c94f59eb4c0d
+- filename: mongo-app/prod.yaml
+  checksum: 17eb2277e615164f2b790a5d9cd25a486b3c58a41987e6df06acf7d3ce876b25
+- filename: mongo-app/templates/deployment.yaml
+  checksum: 408b6ccaed2db5ac74e83a8bd1d7f6393b7c694797b8f32e1181db0e03be4cbe
+- filename: mongo-app/templates/secret.yaml
+  checksum: 247bc2b6e2d292e41b5ba0e8c8b88b8d580dc11be600c840fff406c50451212f
+- filename: mongo-app/uat.yaml
+  checksum: a25fca86bfa6b6bddcda1343981b2a2a716cc914770cd1b53d73a3e64b4a5c1e
+- filename: mongodb-deployment.yaml
+  checksum: d0e789981ceddf1eb78b7fd88a5e782e34c690bec44b4fea94efbcbb36ddba20
+- filename: mongodb-secret.yaml
+  checksum: 7633606e00e71b7ea004f42806d2a19f32d3db9ffda8dd0c8f146e88cc2462dc
+- filename: mongoexpress.yaml
+  checksum: ff97203087a64b0131f0113fc4a11347983e237145792d91e4bcd635384971a6
+version: "1.0"

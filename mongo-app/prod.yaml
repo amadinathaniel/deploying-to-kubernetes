@@ -1,0 +1,18 @@
+# Default values for mongo-app.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+servicePort: 8081
+
+nodePort: 30002
+
+configmap: 
+  name: mongodb-configmap
+
+secret: 
+  name: mongodb-secret
+
+mongoDB:
+  databaseUrl: mongodb-service
+  mongorootusername: dXNlcm5hbWU=
+  mongorootpassword: cGFzc3dvcmQ=
