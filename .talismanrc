@@ -1,4 +1,6 @@
 fileignoreconfig:
+- filename: k8s-commands.md
+  checksum: 37dcec3685bfb3ca3cd334c85700f26ca8a022af0f0619862a6db49eda898fd0
 - filename: mongo-app/dev.yaml
   checksum: 0eb506f55ef8e0615782381b95dc941600a965918f67afbaaa18c94f59eb4c0d
 - filename: mongo-app/prod.yaml
