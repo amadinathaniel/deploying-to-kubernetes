@@ -1,6 +1,12 @@
 fileignoreconfig:
 - filename: k8s-commands.md
   checksum: 37dcec3685bfb3ca3cd334c85700f26ca8a022af0f0619862a6db49eda898fd0
+- filename: mongo-app-manifests/mongodb-deployment.yaml
+  checksum: 9813894729522f51d4bc33a4d269c793192d91498a26e0a6428117258562a759
+- filename: mongo-app-manifests/mongodb-secret.yaml
+  checksum: e5d3cfc4c75dd95818e46fd3e2cb5f3e8ac2c482205a0244ece0ec0f1fe636e8
+- filename: mongo-app-manifests/mongoexpress.yaml
+  checksum: 8732bcbe641732a7d44bc03fd35875942a474dcc460549fa82c58da72737d378
 - filename: mongo-app/dev.yaml
   checksum: 0eb506f55ef8e0615782381b95dc941600a965918f67afbaaa18c94f59eb4c0d
 - filename: mongo-app/prod.yaml
