@@ -9,7 +9,7 @@ expressImage:
   image: mongo-express
   containerPort: 8081
   servicePort: 8082
-  nodePort: 31002
+  nodePort: 31005
 
 mongoImage:
   name: mongodb

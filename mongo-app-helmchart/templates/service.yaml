@@ -13,7 +13,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: mongo-express-service
+  name: mongo-express-service-{{ .Values.environment }}
 spec:
   selector:
     app: mongo-express-{{ .Values.environment }}

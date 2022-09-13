@@ -30,7 +30,7 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: mongodb-secret-{{ .Values.environment }}
-                key: mongorootpassword
+                key: mongo-root-password
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -68,5 +68,5 @@ spec:
           - name: ME_CONFIG_MONGODB_SERVER
             valueFrom:
               configMapKeyRef:
-                name: mongodb-configmap-mongodb-secret-{{ .Values.environment }}
+                name: mongodb-configmap-{{ .Values.environment }}
                 key: database_Url

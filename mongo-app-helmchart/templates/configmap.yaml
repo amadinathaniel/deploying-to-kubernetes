@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: mongodb-configmap-{{ .Values.environment }}
 data:
-  database_url: mongodb-service-{{ .Values.environment }}
+  database_Url: mongodb-service-{{ .Values.environment }}
