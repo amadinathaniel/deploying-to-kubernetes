@@ -1,0 +1,39 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: argocd-helmchart
+spec:
+  generators:
+  - list:
+      elements:
+      - namespace: dev
+        url: https://kubernetes.default.svc
+      - namespace: uat
+        url: https://kubernetes.default.svc
+      - namespace: prod
+        url: https://kubernetes.default.svc
+  template:
+    metadata:
+      name: '{{namespace}}-mongo-app'
+    spec:
+      project: default
+      
+      source:
+        helm:
+          valueFiles:
+            - "{{namespace}}.yaml"
+        path: mongo-app-helmchart
+        repoURL: https://github.com/amadinathaniel/deploying-to-kubernetes
+        targetRevision: HEAD
+        
+      destination:
+        server: '{{url}}'
+        namespace: '{{namespace}}'
+
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
+
+        automated:
+          selfHeal: true
+          prune: true
