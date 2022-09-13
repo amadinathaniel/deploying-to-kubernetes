@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo-app-{{ .Values.environment }}
+  labels:
+    app: mongodb-{{ .Values.environment }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: mongodb-{{ .Values.environment }}
+  template:
+    metadata:
+      labels:
+        app: mongodb-{{ .Values.environment }}
+    spec:
+      containers:
+      - name: {{ .Values.mongoImage.name }}
+        image: {{ .Values.mongoImage.image }}
+        resources:
+        ports:
+        - containerPort: {{ .Values.mongoImage.containerPort }}
+        env:
+          - name: MONGO_INITDB_ROOT_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: mongodb-secret-{{ .Values.environment }}
+                key: mongo-root-username
+          - name: MONGO_INITDB_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mongodb-secret-{{ .Values.environment }}
+                key: mongorootpassword
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo-express-{{ .Values.environment }}
+  labels:
+    app: mongo-express-{{ .Values.environment }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: mongo-express-{{ .Values.environment }}
+  template:
+    metadata:
+      labels:
+        app: mongo-express-{{ .Values.environment }}
+    spec:
+      containers:
+      - name: {{ .Values.expressImage.name }}
+        image: {{ .Values.expressImage.image }}
+        resources:
+        ports:
+        - containerPort: {{ .Values.expressImage.containerPort }}
+        env:
+          - name: ME_CONFIG_MONGODB_ADMINUSERNAME
+            valueFrom:
+                secretKeyRef:
+                  name: mongodb-secret-{{ .Values.environment }}
+                  key: mongo-root-username
+          - name: ME_CONFIG_MONGODB_ADMINPASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mongodb-secret-{{ .Values.environment }}
+                key: mongo-root-password
+          - name: ME_CONFIG_MONGODB_SERVER
+            valueFrom:
+              configMapKeyRef:
+                name: mongodb-configmap-mongodb-secret-{{ .Values.environment }}
+                key: database_Url

@@ -1,0 +1,24 @@
+# Default values for mongo-app.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+expressImage:
+  name: mongo-express
+  image: mongo-express
+  containerPort: 8081
+  servicePort: 8082
+  nodePort: 31002
+
+mongoImage:
+  name: mongodb
+  image: mongo
+  containerPort: 27017
+  servicePort: 27017
+
+secret: 
+  username: dXNlcm5hbWU=
+  password: cGFzc3dvcmQ=
+
+environment: uat

@@ -1,6 +1,16 @@
 fileignoreconfig:
 - filename: k8s-commands.md
   checksum: 37dcec3685bfb3ca3cd334c85700f26ca8a022af0f0619862a6db49eda898fd0
+- filename: mongo-app-helmchart/dev.yaml
+  checksum: 76651dc3b8c5afac2fed231c84e2e846b9dfe70b82ac464ba0f336f0488de075
+- filename: mongo-app-helmchart/prod.yaml
+  checksum: 460bc32dc0fe864308a4055ccd94dd53775322dcb094a9d4bdf67fcef17c267d
+- filename: mongo-app-helmchart/templates/deployment.yaml
+  checksum: 905ebc169ab1a353a51c9191fef44935b6d4ec0b4b33579d16d504edd64437b8
+- filename: mongo-app-helmchart/templates/secret.yaml
+  checksum: 0c58894de60516195fd0137a1219aa7257fddf942a04b8506b4da929b2b9eb62
+- filename: mongo-app-helmchart/uat.yaml
+  checksum: 8af57611ef8e804c155a533370f7d5ed3af994cbd4ec650c2590e82205285e4e
 - filename: mongo-app-manifests/mongodb-deployment.yaml
   checksum: 9813894729522f51d4bc33a4d269c793192d91498a26e0a6428117258562a759
 - filename: mongo-app-manifests/mongodb-secret.yaml
